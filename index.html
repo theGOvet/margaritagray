@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margarita Gray - Próximamente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #b85c5c;
+        }
+        #countdown {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .email {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function countdown() {
+            const launchDate = new Date("2025-06-01T00:00:00").getTime();
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+                
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "¡Ya estamos en línea!";
+                }
+            }, 1000);
+        }
+        window.onload = countdown;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Margarita Gray</h1>
+        <p>Accesorios y bisutería artesanal</p>
+        <p>Estamos preparando algo especial. ¡Vuelve pronto!</p>
+        <div id="countdown"></div>
+        <p class="email">Para más información, contáctanos en: <strong>info@margaritagray.com</strong></p>
+    </div>
+</body>
+</html>
