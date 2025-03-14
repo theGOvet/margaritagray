@@ -23,47 +23,28 @@
         h1 {
             color: #b85c5c;
         }
-        #countdown {
-            font-size: 24px;
+        .image-container {
             margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
         .email {
             margin-top: 20px;
             font-size: 14px;
         }
     </style>
-
-    <!--
-    <script>
-        function countdown() {
-            const launchDate = new Date("2025-06-01T00:00:00").getTime();
-            const x = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = launchDate - now;
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
-                
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "¡Ya estamos en línea!";
-                }
-            }, 1000);
-        }
-        window.onload = countdown;
-    </script>
-    -->
 </head>
 <body>
     <div class="container">
         <h1>Margarita Gray</h1>
         <p>Accesorios y bisutería artesanal</p>
         <p>Estamos preparando algo especial. ¡Vuelve pronto!</p>
-        <div id="countdown"></div>
+        <div class="image-container">
+            <img src="margarita.png" alt="Imagen de Margarita">
+        </div>
         <p class="email">Para más información, contáctanos en: <strong>info@margaritagray.com</strong></p>
     </div>
 </body>
